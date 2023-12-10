@@ -13,6 +13,8 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   Bird();
 
   int score = 0;
+  int hp = 3;
+  int vely = 0;
 
   @override
   Future<void> onLoad() async {
@@ -37,7 +39,8 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   @override
   void update(double dt) {
     super.update(dt);
-    position.y += Config.birdVelocity * dt;
+    vely = vely + 1;
+    position.y += (Config.birdVelocity + vely) * dt;
     if (position.y < 1) {
       gameOver();
     }
@@ -53,6 +56,8 @@ class Bird extends SpriteGroupComponent<BirdMovement>
     );
     FlameAudio.play(Assets.flying);
     current = BirdMovement.up;
+    vely = 0.0;
+
   }
 
   @override
