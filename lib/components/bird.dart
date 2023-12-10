@@ -14,7 +14,7 @@ class Bird extends SpriteGroupComponent<BirdMovement>
 
   int score = 0;
   int hp = 3;
-  int vely = 0;
+  double vely = 0.0;
 
   @override
   Future<void> onLoad() async {
@@ -39,7 +39,7 @@ class Bird extends SpriteGroupComponent<BirdMovement>
   @override
   void update(double dt) {
     super.update(dt);
-    vely = vely + 1;
+    vely = vely + 1.0;
     position.y += (Config.birdVelocity + vely) * dt;
     if (position.y < 1) {
       gameOver();

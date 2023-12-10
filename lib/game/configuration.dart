@@ -5,5 +5,5 @@ class Config {
   static const birdVelocity = 210;
   static const gravity = -100.0;
   static const cloudsHeight = 70.0;
-  static const bird_auto_flap = 0.75;
+  static const birdAutoFlap = 0.75;
 }
